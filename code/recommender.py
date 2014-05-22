@@ -240,3 +240,10 @@ class recommender:
        # Return the first n items
        return recommendations[:self.n]
 
+if __name__ == '__main__':
+    r = recommender(users)
+    print(r.recommend('Jordyn'))
+    print(r.loadBookDB('D:\WorkSpace\git\Guide-to-Data-Mining\data\\'))
+    print(r.recommend('171118'))
+    print(r.userRatings('171118', 5))
+    #r.loadBookDB('./data/')
