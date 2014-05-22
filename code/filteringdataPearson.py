@@ -66,7 +66,7 @@ def computeNearestNeighbor(username, users):
     distances = []
     for user in users:
         if user != username:
-            distance = manhattan(users[user], users[username])
+            distance = pearson(users[user], users[username])
             distances.append((distance, user))
     # sort based on distance -- closest first
     distances.sort()
@@ -87,3 +87,4 @@ def recommend(username, users):
     # using the fn sorted for variety - sort is more efficient
     return sorted(recommendations, key=lambda artistTuple: artistTuple[1], reverse = True)
 
+print( recommend('Hailey', users))
